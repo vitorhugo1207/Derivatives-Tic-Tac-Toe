@@ -1,0 +1,12 @@
+{
+    "one":{
+        "question":"O conceito de __ estuda a variação das funções, como uma dada função varia na medida em que variamos o seu valor de x. Com isso podemos saber se a função cresce e qual a taxa de crescimento dela. Um uso muito comum serve para identificar pontos máximos e mínimos de uma função.",
+        "alternatives":{
+            "A":"Derivada.",
+            "B":"Integral.",
+            "C":"Limite.",
+            "D":"Correlação"
+        },
+        "result":"A"
+    }
+}
