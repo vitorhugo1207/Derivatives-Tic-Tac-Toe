@@ -70,8 +70,21 @@ var TicTacToe = {
         }
     },
 
+    newQuestion: function(){
+        fetch("questions.json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.one.question)
+                document.querySelector("#textQuestion").innerText = data.one.question
+            })
+
+
+        // const question = fetch('./questions.json').then(results => results.json());
+    },
+
     questionVerification: function(){
         event.preventDefault();
+        this.newQuestion();
         const buttonA = document.getElementById('buttonA').checked;
         const buttonB = document.getElementById('buttonB').checked;
         const buttonC = document.getElementById('buttonC').checked;
