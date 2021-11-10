@@ -71,21 +71,31 @@ var TicTacToe = {
     },
 
     newQuestion: function(){
-        fetch("questions.json")
-            .then(response => response.json())
-            .then(data => {
-                document.querySelector("#textQuestion").innerText = data.one.question;
-                const keys = Object.keys(data);
-                const randIndex = Math.floor(Math.random() * keys.length);
-                const randKey = keys[randIndex];
-                console.log(keys[randKey]);
-            })
-        console.log(keys[randKey]);
-        },
+        const getResponse = response => response.json();
+        const processJSON = json => {
+            var keys = Object.keys(json);
+            var randIndex = Math.floor(Math.random() * keys.length);
+            var randKey = keys[randIndex];
+            console.log(randKey)
+            document.querySelector("#textQuestion").innerText = json[randKey].question
+
+            document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A
+            document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B
+            document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C
+            document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D
+        };
+        
+        fetch("questions.json", {cache: "no-store"})
+            .then(getResponse) 
+            .then(processJSON) 
+    },
 
     questionVerification: function(){
         event.preventDefault();
         this.newQuestion();
+        const processJSON = json => {
+            console.log(json)
+        };
         const buttonA = document.getElementById('buttonA').checked;
         const buttonB = document.getElementById('buttonB').checked;
         const buttonC = document.getElementById('buttonC').checked;
