@@ -1,34 +1,144 @@
 {
     "one":{
-        "question":"O conceito de __ estuda a variação das funções, como uma dada função varia na medida em que variamos o seu valor de x. Com isso podemos saber se a função cresce e qual a taxa de crescimento dela. Um uso muito comum serve para identificar pontos máximos e mínimos de uma função.",
+        "question":"aa",
         "alternatives":{
-            "A":"aaaaaaaaaaaDerivada.",
-            "B":"Integral.",
-            "C":"Limite.",
+            "A":"aa.",
+            "B":"aa.",
+            "C":"aa.",
+            "D":"aa"
+        },
+        "result":"aA"
+    },
+
+    "two":{
+        "question":"bb",
+        "alternatives":{
+            "A":"bb.",
+            "B":"bb.",
+            "C":"bb.",
+            "D":"bb"
+        },
+        "result":"Bb"
+    },
+
+    "three":{
+        "question":"A derivada de uma parábola é:",
+        "alternatives":{
+            "A":"uma reta paralela ao eixo x.",
+            "B":"uma reta crescente.",
+            "C":"uma reta decrescente   .",
+            "D":"uma reta"
+        },
+        "result":"D"
+    },
+
+    "four":{
+        "question":"A taxa de variação de uma curva quando seu intervalo tende a zero, é conhecida como:",
+        "alternatives":{
+            "A":"Soma de quadrados.",
+            "B":"Regra do cociente.",
+            "C":"Derivada.",
+            "D":"Limite."
+        },
+        "result":"C"
+    },
+
+    "five":{
+        "question":"Qual a derivada de f(x) = 3x⁵ – 2x³ + 5 – 3x?",
+        "alternatives":{
+            "A":"3x⁴ - 2x² - 2",
+            "B":"x² – 3",
+            "C":"15x⁴ – 6x² - 3",
+            "D":"-2x³ + 5"
+        },
+        "result":"C"
+    },
+
+    "six":{
+        "question":"Ao derivarmos f(x) = x2 no ponto 2:",
+        "alternatives":{
+            "A":"f’(x) = 2",
+            "B":"f’(2) = 2 * 2",
+            "C":"f’(2) = 4",
+            "D":"--"
+        },
+        "result":"C"
+    },
+
+    "sevan":{
+        "question":"777777777777",
+        "alternatives":{
+            "A":"7777777",
+            "B":"7777777777",
+            "C":"7777777777",
+            "D":"777777"
+        },
+        "result":"7777777"
+    },
+
+    "eight":{
+        "question":"Com base na função f(x) = x³ + x² + x + 1. Ao calcularmos sua derivada temos: ",
+        "alternatives":{
+            "A":"f’(x) = 3 + 2x + 1",
+            "B":"f’(x) = 3x² + 2x + 1x²",
+            "C":"f’(x) = 3x² + 2x + 1",
+            "D":"f’(x) = x³ + 2x + 2"
+        },
+        "result":"C"
+    },
+
+    "nine":{
+        "question":"Das regras abaixo qual NÃO pertence a regra da derivada?",
+        "alternatives":{
+            "A":"Regra da Potência",
+            "B":"Regra da multiplicação por constante",
+            "C":"Regra da Soma",
+            "D":"Regra do Polinomio"
+        },
+        "result":"D"
+    },
+
+    "ten":{
+        "question":"Qual o valor de y = x⁵?",
+        "alternatives":{
+            "A":"y⁴",
+            "B":"xy⁵⁻¹",
+            "C":"x⁴",
+            "D":"x⁵⁻¹"
+        },
+        "result":"C"
+    },
+
+    "eleven":{
+        "question":"O conceito de ____________ estuda a variação das funções, como uma dada função varia na medida em que variamos o seu valor de x. Com isso podemos saber se a função cresce e qual a taxa de crescimento dela. Um uso muito comum serve para identificar pontos máximos e mínimos de uma função.",
+        "alternatives":{
+            "A":"Derivada",
+            "B":"Integral",
+            "C":"Limite",
             "D":"Correlação"
         },
         "result":"A"
     },
 
-    "two":{
-        "question":"bbbbbbbbbbO conceito de __ estuda a variação das funções, como uma dada função varia na medida em que variamos o seu valor de x. Com isso podemos saber se a função cresce e qual a taxa de crescimento dela. Um uso muito comum serve para identificar pontos máximos e mínimos de uma função.",
+    "twelve":{
+        "question":"Ao calcularmos a derivada de f(x) = 6x³ − 9x + 4. Obtemos:",
         "alternatives":{
-            "A":"bbbbbbbbbbDerivada.",
-            "B":"bbbbbbbbbbbbIntegral.",
-            "C":"Limite.",
-            "D":"Correlação"
+            "A":"f′(x) = 18x² − 9",
+            "B":"f′(x)=18x² − 3x + 2",
+            "C":"f′(x)=3x² − 9",
+            "D":"f′(x)=18x² − 3"
         },
-        "result":"B"
+        "result":"A"
     },
 
-    "three":{
-        "question":"CCCCCCCCCCCCCCCCO conceito de __ estuda a variação das funções, como uma dada função varia na medida em que variamos o seu valor de x. Com isso podemos saber se a função cresce e qual a taxa de crescimento dela. Um uso muito comum serve para identificar pontos máximos e mínimos de uma função.",
+    "fourteen":{
+        "question":"Defina a derivada da função: f(x)=2x⁴ − 10x2 + 13x:",
         "alternatives":{
-            "A":"CCCCCCCCCCCCCCCCCCDerivada.",
-            "B":"CCCCCCCCCCIntegral.",
-            "C":"Limite.",
-            "D":"ddddddddddddCorrelação"
+            "A":"4x² − 20x + 13",
+            "B":"8x³ − 20x + 13",
+            "C":"8x³ − 100x ",
+            "D":"8x³ − 20x + 3x"
         },
-        "result":"C"
+        "result":"B"
     }
 }
