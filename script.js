@@ -71,50 +71,62 @@ var TicTacToe = {
     },
 
     Question: function(){
+        // Avoid refresh page
         try{
-            event.preventDefault()
+            event.preventDefault();
         }
-        catch(e){}
-        // Geting content buttom
-        const buttonA = document.getElementById('buttonA');
-        const buttonB = document.getElementById('buttonB');
-        const buttonC = document.getElementById('buttonC');
-        const buttonD = document.getElementById('buttonD');
-        
+        catch(e){};
+
         // Opening Question.json
         const getResponse = response => response.json();
         const processJSON = json => {
+            // Getting random question
+            const keys = Object.keys(json);
+            const randIndex = Math.floor(Math.random() * keys.length);
+            const randKey = keys[randIndex];
+            const result = json[randKey].result;
+            
             // Setting question when reload page
             if(buttonA == null && buttonB == null && buttonC == null && buttonD == null){
-                // Getting random question
-                var keys = Object.keys(json);
-                var randIndex = Math.floor(Math.random() * keys.length);
-                var randKey = keys[randIndex];
-    
                 // Updating question
-                document.querySelector("#textQuestion").innerText = json[randKey].question
-                document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A
-                document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B
-                document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C
-                document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D
+                document.querySelector("#textQuestion").innerText = json[randKey].question;
+                document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A;
+                document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B;
+                document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
+                document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
+                console.log(result);
             }
             else{
-                // Avoid refresh page
+                console.log(result);
+                // Geting content buttom
+                const buttonA = document.getElementById('buttonA').checked;
+                const buttonB = document.getElementById('buttonB').checked;
+                const buttonC = document.getElementById('buttonC').checked;
+                const buttonD = document.getElementById('buttonD').checked;
+                
                 // Reset radios
                 document.getElementById('buttons').reset();
 
-                // Getting random question
-                var keys = Object.keys(json);
-                var randIndex = Math.floor(Math.random() * keys.length);
-                var randKey = keys[randIndex];
+                if(buttonA == true){
+                    console.log('a')
+                    // this.nextTurn()
+                }
+                else if(buttonB == true){
+                    console.log('b')
+                }
+                else if(buttonC == true){
+                    console.log('c')
+                }
+                else if(buttonD == true){
+                    console.log('d')
+                };
 
                 // Updating question
-                document.querySelector("#textQuestion").innerText = json[randKey].question
-                document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A
-                document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B
-                document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C
-                document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D
-                this.nextTurn()
+                document.querySelector("#textQuestion").innerText = json[randKey].question;
+                document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A;
+                document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B;
+                document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
+                document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
             };
 
         };

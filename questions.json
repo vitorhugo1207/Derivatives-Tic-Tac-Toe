@@ -1,24 +1,24 @@
 {
     "one":{
-        "question":"aa",
+        "question":"É a regra do(a) __________  que nos diz como calcular a derivada de expressões da forma xn (em outras palavras, expressões com x elevado à qualquer potência).",
         "alternatives":{
-            "A":"aa.",
-            "B":"aa.",
-            "C":"aa.",
-            "D":"aa"
+            "A":"Regra da potência.",
+            "B":"Regra da multiplicação por constante.",
+            "C":"Regra do produto.",
+            "D":"Regra do Cociente."
         },
-        "result":"aA"
+        "result":"A"
     },
 
     "two":{
-        "question":"bb",
+        "question":"Dada a função f(x) = 2. Qual a derivada dessa função?",
         "alternatives":{
-            "A":"bb.",
-            "B":"bb.",
-            "C":"bb.",
-            "D":"bb"
+            "A":"f’(x) = 2x²",
+            "B":"f’(x) = x²",
+            "C":"f’(x) = 0, a função não possui derivada pois 2 é uma CONSTANTE",
+            "D":"f’(x) = 4x"
         },
-        "result":"Bb"
+        "result":"C"
     },
 
     "three":{
@@ -26,7 +26,7 @@
         "alternatives":{
             "A":"uma reta paralela ao eixo x.",
             "B":"uma reta crescente.",
-            "C":"uma reta decrescente   .",
+            "C":"uma reta decrescente.",
             "D":"uma reta"
         },
         "result":"D"
@@ -55,7 +55,7 @@
     },
 
     "six":{
-        "question":"Ao derivarmos f(x) = x2 no ponto 2:",
+        "question":"Ao derivarmos f(x) = x² no ponto 2:",
         "alternatives":{
             "A":"f’(x) = 2",
             "B":"f’(2) = 2 * 2",
@@ -66,12 +66,12 @@
     },
 
     "sevan":{
-        "question":"777777777777",
+        "question":"Qual a deriva de f(x) = x3 + 1000?",
         "alternatives":{
-            "A":"7777777",
-            "B":"7777777777",
-            "C":"7777777777",
-            "D":"777777"
+            "A":"f’(x) = 3x²",
+            "B":"f’(x) = 3x² - 1000",
+            "C":"f’(x) = x²",
+            "D":"f’(x) = 3x³"
         },
         "result":"7777777"
     },
