@@ -70,16 +70,17 @@ var TicTacToe = {
         }
     },
 
-    newQuestion: function(callback){
+    newQuestion: function(){
         fetch("questions.json")
             .then(response => response.json())
             .then(data => {
                 document.querySelector("#textQuestion").innerText = data.one.question;
                 const keys = Object.keys(data);
-                const randIndex = Math.floor(Math.random() * keys.length)
-                const randKey = keys[randIndex]
-                console.log(data[randKey])
+                const randIndex = Math.floor(Math.random() * keys.length);
+                const randKey = keys[randIndex];
+                console.log(keys[randKey]);
             })
+        console.log(keys[randKey]);
         },
 
     questionVerification: function(){
