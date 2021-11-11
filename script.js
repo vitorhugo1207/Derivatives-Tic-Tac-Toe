@@ -90,10 +90,10 @@ var TicTacToe = {
         // Opening Question.json
         const getResponse = response => response.json();
         const processJSON = json => {
-                
+            
             // Setting question when reload page
             if(radioA == null && radioB == null && radioC == null && radioD == null){
-
+                
                 // Getting random question
                 const keys = Object.keys(json);
                 const randIndex = Math.floor(Math.random() * keys.length);
@@ -135,6 +135,34 @@ var TicTacToe = {
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
                         }
                     };
+                    this.turnIndicator.innerText = this.symbols[this.currentPlayer] + " joga.\n Você acertou, faça sua jogada..."
+
+                    // Getting random question
+                    const keys = Object.keys(json);
+                    const randIndex = Math.floor(Math.random() * keys.length);
+                    randKey = keys[randIndex];
+
+                    var board = this.board;
+                    
+                    board.addEventListener('click', function boardClick(){
+                        board.removeEventListener('click', boardClick);
+
+                        // Updating question
+                        document.querySelector("#textQuestion").innerText = json[randKey].question;
+                        document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A;
+                        document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B;
+                        document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
+                        document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
+                        result = json[randKey].result;
+                    });
+                    
+                    const listradiosInputs = [radioA, radioB, radioC, radioD];
+                    for(var i = 0; i < listradiosInputs.length; i++){
+                        if(listradiosInputs[i].value != result){
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "none";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "none";
+                        }
+                    }
                 }
                 // If player response was wrong
                 else{
@@ -166,9 +194,19 @@ var TicTacToe = {
                         document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
                         document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
                         result = json[randKey].result;
+
                     });
                 }
             }
+            // const listradiosInputs = [radioA, radioB, radioC, radioD];
+            for(var i = 0; i < listradiosInputs.length; i++){
+                if(listradiosInputs[i].value != result){
+                    document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "none";
+                    document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "none";
+                }
+            };
+            console.log('a')
+
             // Reset radiosInputs
             document.getElementById('radiosInputs').reset();
         };
