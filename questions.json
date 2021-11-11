@@ -15,7 +15,7 @@
         "alternatives":{
             "A":"f’(x) = 2x²",
             "B":"f’(x) = x²",
-            "C":"f’(x) = 0, a função não possui derivada pois 2 é uma CONSTANTE",
+            "C":"f’(x) = 0",
             "D":"f’(x) = 4x"
         },
         "result":"C"
