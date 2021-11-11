@@ -1,3 +1,8 @@
+// Global variables
+var result;
+var randKey;
+
+// Main
 var TicTacToe = {
 
     init: function () {
@@ -77,66 +82,58 @@ var TicTacToe = {
         }
         catch(e){};
         
-        // Geting content button
-        const buttonA = document.getElementById('buttonA');
-        const buttonB = document.getElementById('buttonB');
-        const buttonC = document.getElementById('buttonC');
-        const buttonD = document.getElementById('buttonD');
-        
+        // Geting content radio
+        const radioA = document.getElementById('radioA');
+        const radioB = document.getElementById('radioB');
+        const radioC = document.getElementById('radioC');
+        const radioD = document.getElementById('radioD');
         
         // Opening Question.json
         const getResponse = response => response.json();
         const processJSON = json => {
-            
-            // Getting random question
-            const keys = Object.keys(json);
-            const randIndex = Math.floor(Math.random() * keys.length);
-            const randKey = keys[randIndex];
-            const result = json[randKey].result;
-            
+                
             // Setting question when reload page
-            if(buttonA == null && buttonB == null && buttonC == null && buttonD == null){
+            if(radioA == null && radioB == null && radioC == null && radioD == null){
+
+                // Getting random question
+                var keys = Object.keys(json);
+                var randIndex = Math.floor(Math.random() * keys.length);
+                randKey = keys[randIndex];
+                
                 // Updating question
                 document.querySelector("#textQuestion").innerText = json[randKey].question;
                 document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A;
                 document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B;
                 document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
                 document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
+                result = json[randKey].result;
             }
             else{
-                var buttonValue = ''
-                const listButtons = [buttonA, buttonB, buttonC, buttonD]; 
-                for(const item of listButtons){
+                // Get which radio was chosen (player response)
+                var radioValue;
+                var item;
+                const listradiosInputs = [radioA, radioB, radioC, radioD]; 
+                for(var item of listradiosInputs){
                     if (item.checked == true){
-                        var buttonRight = item;
-                        buttonValue = item.value;
+                        radioValue = item.value;
                     }
                 };
                 
-                // Comparition result question with player response
-                console.log('----',buttonValue)
-                console.log('----',result)
-                if(buttonValue == result){
-                    console.log('esse butão: SWAP foi o escolhido.'.replace("SWAP", result));
+                // Comparition answer right with player response
+                if(radioValue == result){
                     document.getElementById("radioContentA").style.borderLeft = "6px solid green";
                     document.getElementById("radioContentA").style.backgroundColor = "lightgrey";
                 }
+                // If player response was wrong
                 else{
                     document.getElementById("radioContentA").style.borderLeft = "6px solid red";
                     document.getElementById("radioContentA").style.backgroundColor = "lightgrey";                    
                     // Message lost here
                     this.nextTurn();
-                    
-                    // Updating question
-                    document.querySelector("#textQuestion").innerText = json[randKey].question;
-                    document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A;
-                    document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B;
-                    document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
-                    document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
                 }
             }
-            // Reset radios
-            document.getElementById('buttons').reset();
+            // Reset radiosInputs
+            document.getElementById('radiosInputs').reset();
         };
         // Opening Question.json
         fetch("questions.json", {cache: "no-store"})
@@ -173,5 +170,4 @@ var TicTacToe = {
         this.newGameButton.classList.add("show");
     }
 }
-
 window.onload = TicTacToe.init();
