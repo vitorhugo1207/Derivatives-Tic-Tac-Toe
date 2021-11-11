@@ -4,7 +4,6 @@ var randKey;
 
 // Main
 var TicTacToe = {
-
     init: function () {
         TicTacToe.symbols = ["❌", "⭕"];
         TicTacToe.WINNING_SETS = [
@@ -76,8 +75,8 @@ var TicTacToe = {
     },
 
     Question: function(){
-        // Avoid refresh page
         try{
+            // Avoid refresh page
             event.preventDefault();
         }
         catch(e){};
@@ -122,7 +121,10 @@ var TicTacToe = {
                 
                 // Comparition answer right with player response
                 if(radioValue == result){
-                    console.log(radioValue)
+                    document.getElementById("boardId").style.cursor = 'default';
+                    for(var i = 1; i < 10; i++){
+                        document.getElementById("squareSWAP".replace("SWAP", i)).style.pointerEvents = 'all';
+                    };
                     for(var i = 0; i < listradiosInputs.length; i++){
                         if(listradiosInputs[i].value == result){
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid green";
@@ -146,12 +148,29 @@ var TicTacToe = {
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
                         }
                     };
-                    // Message lost here
-                    this.nextTurn();
+                    function sleep(ms) {
+                        return new Promise(resolve => setTimeout(resolve, ms));
+                    };
+                    this.turnIndicator.innerText = this.symbols[this.currentPlayer] + " joga.\n Você errou, passando a vez..."
+                    sleep(4000).then(() => {
+                        this.nextTurn();
+                        // Getting random question
+                        const keys = Object.keys(json);
+                        const randIndex = Math.floor(Math.random() * keys.length);
+                        randKey = keys[randIndex];
+                        
+                        // Updating question
+                        document.querySelector("#textQuestion").innerText = json[randKey].question;
+                        document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A;
+                        document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B;
+                        document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
+                        document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
+                        result = json[randKey].result;
+                    });
                 }
             }
             // Reset radiosInputs
-            // document.getElementById('radiosInputs').reset();
+            document.getElementById('radiosInputs').reset();
         };
         // Opening Question.json
         fetch("questions.json", {cache: "no-store"})
@@ -160,9 +179,6 @@ var TicTacToe = {
     },
 
     nextTurn: function () {
-        document.getElementById("square1").style.cursor = 'not-allowed';
-        document.getElementById("square1").style.pointerEvents = 'none';
-        document.getElementById("square1").click = null;
         this.currentPlayer = 1 - this.currentPlayer;
         this.setTurnIndicator();
     },

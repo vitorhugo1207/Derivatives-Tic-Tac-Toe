@@ -20,17 +20,24 @@
 
         <h2 class="turn-indicator">X's turn</h2>
 
-        <div class="board">
-            <div class="square" onclick="TicTacToe.Question()" id="square1"></div>
-            <div class="square" onclick="TicTacToe.Question()" id="square2"></div>
-            <div class="square" onclick="TicTacToe.Question()" id="square3"></div>
-            <div class="square" onclick="TicTacToe.Question()" id="square4"></div>
-            <div class="square" onclick="TicTacToe.Question()" id="square5"></div>
-            <div class="square" onclick="TicTacToe.Question()" id="square6"></div>
-            <div class="square" onclick="TicTacToe.Question()" id="square7"></div>
-            <div class="square" onclick="TicTacToe.Question()" id="square8"></div>
-            <div class="square" onclick="TicTacToe.Question()" id="square9"></div>
+        <div class="board" id="boardId">
+            <div class="square" id="square1"></div>
+            <div class="square" id="square2"></div>
+            <div class="square" id="square3"></div>
+            <div class="square" id="square4"></div>
+            <div class="square" id="square5"></div>
+            <div class="square" id="square6"></div>
+            <div class="square" id="square7"></div>
+            <div class="square" id="square8"></div>
+            <div class="square" id="square9"></div>
         </div>
+
+        <script type="text/javascript">
+            document.getElementById("boardId").style.cursor = 'not-allowed';
+            for(var i = 1; i < 10; i++){
+                document.getElementById("squareSWAP".replace("SWAP", i)).style.pointerEvents = 'none';
+            }
+        </script>
 
         <div class="new-game">
             <button>NOVO JOGO</button>
@@ -58,11 +65,6 @@
                     <button type="submit" onclick="TicTacToe.Question()">Confirma</button>
                 </form>
             </div>
-
-            <!-- <button id="buttonA" onclick="TicTacToe.questionVerification()"></button>
-            <button id="buttonB" onclick="TicTacToe.questionVerification()"></button>
-            <button id="buttonC" onclick="TicTacToe.questionVerification()"></button>
-            <button id="buttonD" onclick="TicTacToe.questionVerification()"></button> -->
         </div>
     </div>
 </body>
