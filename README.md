@@ -5,6 +5,6 @@
   This project in group of calculus with goal study derivatives. College Fatec Lins.
 </p>
 
-## Play the demo
+##  Play the demo
 
 https://vitorhugo1207.github.io/Tic-Tac-Toe/
