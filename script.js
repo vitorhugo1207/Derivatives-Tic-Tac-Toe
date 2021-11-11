@@ -76,10 +76,18 @@ var TicTacToe = {
             event.preventDefault();
         }
         catch(e){};
-
+        
+        // Geting content button
+        const buttonA = document.getElementById('buttonA');
+        const buttonB = document.getElementById('buttonB');
+        const buttonC = document.getElementById('buttonC');
+        const buttonD = document.getElementById('buttonD');
+        
+        
         // Opening Question.json
         const getResponse = response => response.json();
         const processJSON = json => {
+            
             // Getting random question
             const keys = Object.keys(json);
             const randIndex = Math.floor(Math.random() * keys.length);
@@ -96,39 +104,39 @@ var TicTacToe = {
                 document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
             }
             else{
-                // Geting content button
-                const buttonA = document.getElementById('buttonA').checked;
-                const buttonB = document.getElementById('buttonB').checked;
-                const buttonC = document.getElementById('buttonC').checked;
-                const buttonD = document.getElementById('buttonD').checked;
-                const listButtons = ["buttonA", "buttonB", "buttonC", "buttonD"];
+                var buttonValue = ''
+                const listButtons = [buttonA, buttonB, buttonC, buttonD]; 
                 for(const item of listButtons){
-                    if (item == true){
-                        const resultComparation = item;
+                    if (item.checked == true){
+                        var buttonRight = item;
+                        buttonValue = item.value;
                     }
                 };
-                // console.log(buttonA);
-                // console.log(buttonD);
                 
-                // Reset radios
-                document.getElementById('buttons').reset();
-
-                if(resultComparation == result){
-                    console.log('a')
+                // Comparition result question with player response
+                console.log('----',buttonValue)
+                console.log('----',result)
+                if(buttonValue == result){
+                    console.log('esse butão: SWAP foi o escolhido.'.replace("SWAP", result));
+                    document.getElementById("radioContentA").style.borderLeft = "6px solid green";
+                    document.getElementById("radioContentA").style.backgroundColor = "lightgrey";
                 }
                 else{
-                   // Message lost here
-                    this.nextTurn()
+                    document.getElementById("radioContentA").style.borderLeft = "6px solid red";
+                    document.getElementById("radioContentA").style.backgroundColor = "lightgrey";                    
+                    // Message lost here
+                    this.nextTurn();
+                    
+                    // Updating question
+                    document.querySelector("#textQuestion").innerText = json[randKey].question;
+                    document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A;
+                    document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B;
+                    document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
+                    document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
                 }
-
-                // Updating question
-                document.querySelector("#textQuestion").innerText = json[randKey].question;
-                document.querySelector("#radioContentA").innerText = json[randKey].alternatives.A;
-                document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B;
-                document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
-                document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
-            };
-
+            }
+            // Reset radios
+            document.getElementById('buttons').reset();
         };
         // Opening Question.json
         fetch("questions.json", {cache: "no-store"})
