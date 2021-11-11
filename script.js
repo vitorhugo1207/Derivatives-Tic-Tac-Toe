@@ -90,7 +90,8 @@ var TicTacToe = {
         // Opening Question.json
         const getResponse = response => response.json();
         const processJSON = json => {
-            
+            const listradiosInputs = [radioA, radioB, radioC, radioD]; 
+
             // Setting question when reload page
             if(radioA == null && radioB == null && radioC == null && radioD == null){
                 
@@ -106,13 +107,11 @@ var TicTacToe = {
                 document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
                 document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
                 result = json[randKey].result;
-                console.log(result)
             }
             else{
                 // Get which radio was chosen (player response)
                 var radioValue;
                 var item;
-                const listradiosInputs = [radioA, radioB, radioC, radioD]; 
                 for(var item of listradiosInputs){
                     if (item.checked == true){
                         radioValue = item.value;
@@ -125,13 +124,14 @@ var TicTacToe = {
                     for(var i = 1; i < 10; i++){
                         document.getElementById("squareSWAP".replace("SWAP", i)).style.pointerEvents = 'all';
                     };
+                    // Show responses right and wrong
                     for(var i = 0; i < listradiosInputs.length; i++){
-                        if(listradiosInputs[i].value == result){
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid green";
+                        if(listradiosInputs[i].value != result){
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid red";
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
                         }
                         else{
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid red";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid green";
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
                         }
                     };
@@ -143,7 +143,6 @@ var TicTacToe = {
                     randKey = keys[randIndex];
 
                     var board = this.board;
-                    
                     board.addEventListener('click', function boardClick(){
                         board.removeEventListener('click', boardClick);
 
@@ -154,18 +153,18 @@ var TicTacToe = {
                         document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
                         document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
                         result = json[randKey].result;
-                    });
-                    
-                    const listradiosInputs = [radioA, radioB, radioC, radioD];
-                    for(var i = 0; i < listradiosInputs.length; i++){
-                        if(listradiosInputs[i].value != result){
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "none";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "none";
+
+                        // Cleaning styles
+                        for(var i = 0; i < listradiosInputs.length; i++){
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "";
                         }
-                    }
+                    });
+                     
                 }
                 // If player response was wrong
                 else{
+                    // Show responses right and wrong
                     for(var i = 0; i < listradiosInputs.length; i++){
                         if(listradiosInputs[i].value != result){
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid red";
@@ -176,6 +175,7 @@ var TicTacToe = {
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
                         }
                     };
+                    // Pass player time
                     function sleep(ms) {
                         return new Promise(resolve => setTimeout(resolve, ms));
                     };
@@ -198,15 +198,6 @@ var TicTacToe = {
                     });
                 }
             }
-            // const listradiosInputs = [radioA, radioB, radioC, radioD];
-            for(var i = 0; i < listradiosInputs.length; i++){
-                if(listradiosInputs[i].value != result){
-                    document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "none";
-                    document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "none";
-                }
-            };
-            console.log('a')
-
             // Reset radiosInputs
             document.getElementById('radiosInputs').reset();
         };
