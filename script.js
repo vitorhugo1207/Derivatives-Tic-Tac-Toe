@@ -96,8 +96,8 @@ var TicTacToe = {
             if(radioA == null && radioB == null && radioC == null && radioD == null){
 
                 // Getting random question
-                var keys = Object.keys(json);
-                var randIndex = Math.floor(Math.random() * keys.length);
+                const keys = Object.keys(json);
+                const randIndex = Math.floor(Math.random() * keys.length);
                 randKey = keys[randIndex];
                 
                 // Updating question
@@ -107,6 +107,7 @@ var TicTacToe = {
                 document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
                 document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
                 result = json[randKey].result;
+                console.log(result)
             }
             else{
                 // Get which radio was chosen (player response)
@@ -121,19 +122,36 @@ var TicTacToe = {
                 
                 // Comparition answer right with player response
                 if(radioValue == result){
-                    document.getElementById("radioContentA").style.borderLeft = "6px solid green";
-                    document.getElementById("radioContentA").style.backgroundColor = "lightgrey";
+                    console.log(radioValue)
+                    for(var i = 0; i < listradiosInputs.length; i++){
+                        if(listradiosInputs[i].value == result){
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid green";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
+                        }
+                        else{
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid red";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
+                        }
+                    };
                 }
                 // If player response was wrong
                 else{
-                    document.getElementById("radioContentA").style.borderLeft = "6px solid red";
-                    document.getElementById("radioContentA").style.backgroundColor = "lightgrey";                    
+                    for(var i = 0; i < listradiosInputs.length; i++){
+                        if(listradiosInputs[i].value != result){
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid red";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
+                        }
+                        else{
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid green";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
+                        }
+                    };
                     // Message lost here
                     this.nextTurn();
                 }
             }
             // Reset radiosInputs
-            document.getElementById('radiosInputs').reset();
+            // document.getElementById('radiosInputs').reset();
         };
         // Opening Question.json
         fetch("questions.json", {cache: "no-store"})
@@ -142,6 +160,9 @@ var TicTacToe = {
     },
 
     nextTurn: function () {
+        document.getElementById("square1").style.cursor = 'not-allowed';
+        document.getElementById("square1").style.pointerEvents = 'none';
+        document.getElementById("square1").click = null;
         this.currentPlayer = 1 - this.currentPlayer;
         this.setTurnIndicator();
     },
