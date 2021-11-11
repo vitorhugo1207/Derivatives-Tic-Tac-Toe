@@ -94,32 +94,32 @@ var TicTacToe = {
                 document.querySelector("#radioContentB").innerText = json[randKey].alternatives.B;
                 document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
                 document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
-                console.log(result);
             }
             else{
-                console.log(result);
-                // Geting content buttom
+                // Geting content button
                 const buttonA = document.getElementById('buttonA').checked;
                 const buttonB = document.getElementById('buttonB').checked;
                 const buttonC = document.getElementById('buttonC').checked;
                 const buttonD = document.getElementById('buttonD').checked;
+                const listButtons = ["buttonA", "buttonB", "buttonC", "buttonD"];
+                for(const item of listButtons){
+                    if (item == true){
+                        const resultComparation = item;
+                    }
+                };
+                // console.log(buttonA);
+                // console.log(buttonD);
                 
                 // Reset radios
                 document.getElementById('buttons').reset();
 
-                if(buttonA == true){
+                if(resultComparation == result){
                     console.log('a')
-                    // this.nextTurn()
                 }
-                else if(buttonB == true){
-                    console.log('b')
+                else{
+                   // Message lost here
+                    this.nextTurn()
                 }
-                else if(buttonC == true){
-                    console.log('c')
-                }
-                else if(buttonD == true){
-                    console.log('d')
-                };
 
                 // Updating question
                 document.querySelector("#textQuestion").innerText = json[randKey].question;
