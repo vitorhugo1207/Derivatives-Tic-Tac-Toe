@@ -141,7 +141,7 @@ var TicTacToe = {
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
                         }
                     };
-                    this.turnIndicator.innerText = this.symbols[this.currentPlayer] + " joga.\n Você acertou, faça sua jogada..."
+                    this.turnIndicator.innerText = this.symbols[this.currentPlayer] + " joga.\n Você acertou, faça sua jogada...";
 
                     // Getting random question
                     const keys = Object.keys(json);
