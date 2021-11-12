@@ -94,7 +94,13 @@ var TicTacToe = {
 
             // Setting question when reload page
             if(radioA == null && radioB == null && radioC == null && radioD == null){
-                
+
+                // Board Block
+                document.getElementById("boardId").style.cursor = 'not-allowed';
+                for(var i = 1; i < 10; i++){
+                    document.getElementById("squareSWAP".replace("SWAP", i)).style.pointerEvents = 'none';
+                };
+
                 // Getting random question
                 const keys = Object.keys(json);
                 const randIndex = Math.floor(Math.random() * keys.length);
@@ -118,7 +124,7 @@ var TicTacToe = {
                     }
                 };
                 
-                // Comparition answer right with player response
+                // If player response was right
                 if(radioValue == result){
                     document.getElementById("boardId").style.cursor = 'default';
                     for(var i = 1; i < 10; i++){
@@ -158,9 +164,15 @@ var TicTacToe = {
                         for(var i = 0; i < listradiosInputs.length; i++){
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "";
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "";
-                        }
+                    };
+                        // Board Block
+                        document.getElementById("boardId").style.cursor = 'not-allowed';
+                        for(var i = 1; i < 10; i++){
+                            document.getElementById("squareSWAP".replace("SWAP", i)).style.pointerEvents = 'none';
+                        };
+                        // Reset radiosInputs
+                        document.getElementById('radiosInputs').reset();
                     });
-                     
                 }
                 // If player response was wrong
                 else{
@@ -194,12 +206,22 @@ var TicTacToe = {
                         document.querySelector("#radioContentC").innerText = json[randKey].alternatives.C;
                         document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
                         result = json[randKey].result;
-
+                        
+                        // Cleaning styles
+                        for(var i = 0; i < listradiosInputs.length; i++){
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "";
+                        };
+                        // Board Block
+                        document.getElementById("boardId").style.cursor = 'not-allowed';
+                        for(var i = 1; i < 10; i++){
+                            document.getElementById("squareSWAP".replace("SWAP", i)).style.pointerEvents = 'none';
+                        };
+                        // Reset radiosInputs
+                        document.getElementById('radiosInputs').reset();
                     });
                 }
             }
-            // Reset radiosInputs
-            document.getElementById('radiosInputs').reset();
         };
         // Opening Question.json
         fetch("questions.json", {cache: "no-store"})
