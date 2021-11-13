@@ -91,10 +91,8 @@ var TicTacToe = {
         const getResponse = response => response.json();
         const processJSON = json => {
             const listradiosInputs = [radioA, radioB, radioC, radioD]; 
-
             // Setting question when reload page
             if(radioA == null && radioB == null && radioC == null && radioD == null){
-
                 // Board Block
                 document.getElementById("boardId").style.cursor = 'not-allowed';
                 for(var i = 1; i < 10; i++){
@@ -126,6 +124,7 @@ var TicTacToe = {
                 
                 // If player response was right
                 if(radioValue == result){
+                    // unblock board
                     document.getElementById("boardId").style.cursor = 'default';
                     for(var i = 1; i < 10; i++){
                         document.getElementById("squareSWAP".replace("SWAP", i)).style.pointerEvents = 'all';
@@ -133,12 +132,14 @@ var TicTacToe = {
                     // Show responses right and wrong
                     for(var i = 0; i < listradiosInputs.length; i++){
                         if(listradiosInputs[i].value != result){
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid red";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "4px solid red";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.padding = "5px";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "red";
                         }
                         else{
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid green";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "4px solid green";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.padding = "5px";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "green";
                         }
                     };
                     this.turnIndicator.innerText = this.symbols[this.currentPlayer] + " joga.\n Você acertou, faça sua jogada...";
@@ -163,7 +164,7 @@ var TicTacToe = {
                         // Cleaning styles
                         for(var i = 0; i < listradiosInputs.length; i++){
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "";
                     };
                         // Board Block
                         document.getElementById("boardId").style.cursor = 'not-allowed';
@@ -176,15 +177,20 @@ var TicTacToe = {
                 }
                 // If player response was wrong
                 else{
+                    // Block buttom "confirma"
+                    document.getElementById("abc456").style.cursor = 'not-allowed';
+                    document.getElementById("abc123").style.pointerEvents = 'none';
                     // Show responses right and wrong
                     for(var i = 0; i < listradiosInputs.length; i++){
                         if(listradiosInputs[i].value != result){
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid red";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "4px solid red";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.padding = "5px";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "red";
                         }
                         else{
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "6px solid green";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "lightgrey";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "4px solid green";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.padding = "5px";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "green";
                         }
                     };
                     // Pass player time
@@ -210,7 +216,8 @@ var TicTacToe = {
                         // Cleaning styles
                         for(var i = 0; i < listradiosInputs.length; i++){
                             document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.backgroundColor = "";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.padding = "";
+                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "";
                         };
                         // Board Block
                         document.getElementById("boardId").style.cursor = 'not-allowed';
@@ -219,8 +226,12 @@ var TicTacToe = {
                         };
                         // Reset radiosInputs
                         document.getElementById('radiosInputs').reset();
+
+                        // unblock buttom "confirma"
+                        document.getElementById("abc456").style.cursor = 'default';
+                        document.getElementById("abc123").style.pointerEvents = 'all';
                     });
-                }
+                };
             }
         };
         // Opening Question.json
