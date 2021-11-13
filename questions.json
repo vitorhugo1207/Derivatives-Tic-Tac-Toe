@@ -1,6 +1,6 @@
 {
     "one":{
-        "question":"É a regra do(a) __________  que nos diz como calcular a derivada de expressões da forma xn (em outras palavras, expressões com x elevado à qualquer potência).",
+        "question":"É a regra do(a) __________  que nos diz como calcular a derivada de expressões da forma x^n (em outras palavras, expressões com x elevado à qualquer potência).",
         "alternatives":{
             "A":"Regra da potência.",
             "B":"Regra da multiplicação por constante.",
@@ -66,7 +66,7 @@
     },
 
     "sevan":{
-        "question":"Qual a deriva de f(x) = x3 + 1000?",
+        "question":"Qual a deriva de f(x) = x³ + 1000?",
         "alternatives":{
             "A":"f’(x) = 3x²",
             "B":"f’(x) = 3x² - 1000",
@@ -131,7 +131,7 @@
         "result":"A"
     },
 
-    "fourteen":{
+    "thir   teen":{
         "question":"Defina a derivada da função: f(x)=2x⁴ − 10x2 + 13x:",
         "alternatives":{
             "A":"4x² − 20x + 13",
