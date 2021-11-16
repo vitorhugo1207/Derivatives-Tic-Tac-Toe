@@ -204,10 +204,10 @@
     "twelfty":{
         "question":"Qual a derivada de e(x)ᵇ⁺¹?",
         "alternatives":{
-            "A":"A oscilação de valores a um limite",
-            "B":"A o comprimento dos pontos (A, B) em uma reta",
-            "C":"A inclinação da reta tangente a uma função f (x)",
-            "D":"A soma dos componentes dentro da função"
+            "A":"x⁽ᵇ⁺¹⁾",
+            "B":"(b-1)x",
+            "C":"x⁽¹⁻ᵇ⁾",
+            "D":"(b+1)xᵇ"
         },
         "result":"D"
     }
