@@ -130,18 +130,6 @@ var TicTacToe = {
                         document.getElementById("squareSWAP".replace("SWAP", i)).style.pointerEvents = 'all';
                     };
                     // Show responses right and wrong
-                    for(var i = 0; i < listradiosInputs.length; i++){
-                        if(listradiosInputs[i].value != result){
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "4px solid red";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.padding = "5px";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "red";
-                        }
-                        else{
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "4px solid green";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.padding = "5px";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "green";
-                        }
-                    };
                     this.turnIndicator.innerText = this.symbols[this.currentPlayer] + " joga.\n Você acertou, faça sua jogada...";
 
                     // Getting random question
@@ -161,11 +149,6 @@ var TicTacToe = {
                         document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
                         result = json[randKey].result;
 
-                        // Cleaning styles
-                        for(var i = 0; i < listradiosInputs.length; i++){
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "";
-                    };
                         // Board Block
                         document.getElementById("boardId").style.cursor = 'not-allowed';
                         for(var i = 1; i < 10; i++){
@@ -181,18 +164,6 @@ var TicTacToe = {
                     document.getElementById("abc456").style.cursor = 'not-allowed';
                     document.getElementById("abc123").style.pointerEvents = 'none';
                     // Show responses right and wrong
-                    for(var i = 0; i < listradiosInputs.length; i++){
-                        if(listradiosInputs[i].value != result){
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "4px solid red";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.padding = "5px";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "red";
-                        }
-                        else{
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "4px solid green";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.padding = "5px";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "green";
-                        }
-                    };
                     // Pass player time
                     function sleep(ms) {
                         return new Promise(resolve => setTimeout(resolve, ms));
@@ -213,12 +184,6 @@ var TicTacToe = {
                         document.querySelector("#radioContentD").innerText = json[randKey].alternatives.D;
                         result = json[randKey].result;
                         
-                        // Cleaning styles
-                        for(var i = 0; i < listradiosInputs.length; i++){
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.borderLeft = "";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.padding = "";
-                            document.getElementById("radioContentSWAP".replace("SWAP", listradiosInputs[i].value)).style.color = "";
-                        };
                         // Board Block
                         document.getElementById("boardId").style.cursor = 'not-allowed';
                         for(var i = 1; i < 10; i++){
