@@ -1,5 +1,5 @@
 .question{
-  position: absolute;
+  position: absolute !important;
   left: 900px !important;
   top: 150px !important;
   right: 40px !important;
