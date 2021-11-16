@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js" defer></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script language="javascript">
+        TicTacToe.Question();
+    </script>
+</head>
+
+<body>
+    <div class="tic-tac-toe">
+        <h1>Jogo da Velha</h1>
+
+        <h2 class="turn-indicator">X's turn</h2>
+
+        <div class="board" id="boardId">
+            <div class="square" id="square1"></div>
+            <div class="square" id="square2"></div>
+            <div class="square" id="square3"></div>
+            <div class="square" id="square4"></div>
+            <div class="square" id="square5"></div>
+            <div class="square" id="square6"></div>
+            <div class="square" id="square7"></div>
+            <div class="square" id="square8"></div>
+            <div class="square" id="square9"></div>
+        </div>
+        
+        <div class="new-game">
+            <button>NOVO JOGO</button>
+        </div>
+
+        <div class="question">
+            <p id="textQuestion"></p>
+            <div id="abc456">
+                <form id="radiosInputs">
+                    <input type="radio" id="radioA" name="radio" value="A">
+                    <label for="radioA" id="radioContentA"></label> <br>
+
+                    <input type="radio" id="radioB" name="radio" value="B">
+                    <label for="radioB" id="radioContentB"></label> <br>
+
+                    <input type="radio" id="radioC" name="radio" value="C">
+                    <label for="radioC" id="radioContentC"></label> <br>
+
+                    <input type="radio" id="radioD" name="radio" value="D">
+                    <label for="radioD" id="radioContentD"></label> <br>
+                    <br>
+                    
+                    <button type="submit" onclick="TicTacToe.Question()" id="abc123">Confirma</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

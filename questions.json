@@ -24,10 +24,10 @@
     "three":{
         "question":"A derivada de uma parábola é:",
         "alternatives":{
-            "A":"uma reta paralela ao eixo x.",
-            "B":"uma reta crescente.",
-            "C":"uma reta decrescente.",
-            "D":"uma reta"
+            "A":"Uma reta paralela ao eixo x.",
+            "B":"Uma reta crescente.",
+            "C":"Uma reta decrescente.",
+            "D":"Uma reta"
         },
         "result":"D"
     },
@@ -131,7 +131,7 @@
         "result":"A"
     },
 
-    "thir   teen":{
+    "thirteen":{
         "question":"Defina a derivada da função: f(x)=2x⁴ − 10x2 + 13x:",
         "alternatives":{
             "A":"4x² − 20x + 13",
@@ -140,5 +140,75 @@
             "D":"8x³ − 20x + 3x"
         },
         "result":"B"
+    },
+    "fourteen":{
+        "question":"Qual a derivada da função f(x) = x²?",
+        "alternatives":{
+            "A":"f'(x) = 2x",
+            "B":"f'(x) = 4x",
+            "C":"f'(x) = 2x²",
+            "D":"f'(x) = x⁴"
+        },
+        "result":"A"
+    },
+    "fifteen":{
+        "question":"Dada a função f(x) = 20, podemos dizer que sua derivada é:",
+        "alternatives":{
+            "A":"É igual a 0",
+            "B":"Uma constante",
+            "C":"f'(x) = 20x",
+            "D":"Alternativas A e B"
+        },
+        "result":"D"
+    },
+    "sixteen":{
+        "question":"Com base na função f(x) = 5x³ + 2x, a derivada correspondente a ela é:",
+        "alternatives":{
+            "A":"f(x) = 5x² + 2",
+            "B":"f'(x) = 15x² + 2",
+            "C":"f’(x) = 3x⁵ - 2x",
+            "D":"f(x) = 15x² + 2x"
+        },
+        "result":"B"
+    },
+    "sevanteen":{
+        "question":"A derivada de uma função é um(a)__________.",
+        "alternatives":{
+            "A":"Soma",
+            "B":"Fração",
+            "C":"Função",
+            "D":"Quociente"
+        },
+        "result":"C"
+    },
+    "eightteen":{
+        "question":"Qual destes filósofos/matemáticos descobriu a Regra do Produto?",
+        "alternatives":{
+            "A":"Gottfried Wilhelm Leibniz",
+            "B":"Isaac Newton",
+            "C":"Augustin-Louis Cauchy",
+            "D":"Karl Weierstrass"
+        },
+        "result":"A"
+    },
+    "nineteen":{
+        "question":"As derivadas quando existem determinam:",
+        "alternatives":{
+            "A":"A oscilação de valores a um limite",
+            "B":"A o comprimento dos pontos (A, B) em uma reta",
+            "C":"A inclinação da reta tangente a uma função f (x)",
+            "D":"A soma dos componentes dentro da função"
+        },
+        "result":"C"
+    },
+    "twelfty":{
+        "question":"Qual a derivada de e(x)ᵇ⁺¹?",
+        "alternatives":{
+            "A":"A oscilação de valores a um limite",
+            "B":"A o comprimento dos pontos (A, B) em uma reta",
+            "C":"A inclinação da reta tangente a uma função f (x)",
+            "D":"A soma dos componentes dentro da função"
+        },
+        "result":"D"
     }
 }

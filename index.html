@@ -1,63 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo da Velha</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js" defer></script>
-    <script type="text/javascript" src="script.js"></script>
-    <script language="javascript">
-        TicTacToe.Question();
-    </script>
+    <title>Regras</title>
+    <style>
+        body{
+            background-image: linear-gradient(55deg, rgb(38, 18, 80), rgb(41, 184, 184));
+            background-size: cover;
+            height: 100vh;
+            width: 300vh;
+         
+        }
+    </style>
 </head>
-
 <body>
-    <div class="tic-tac-toe">
-        <h1>Jogo da Velha</h1>
-
-        <h2 class="turn-indicator">X's turn</h2>
-
-        <div class="board" id="boardId">
-            <div class="square" id="square1"></div>
-            <div class="square" id="square2"></div>
-            <div class="square" id="square3"></div>
-            <div class="square" id="square4"></div>
-            <div class="square" id="square5"></div>
-            <div class="square" id="square6"></div>
-            <div class="square" id="square7"></div>
-            <div class="square" id="square8"></div>
-            <div class="square" id="square9"></div>
+    <div class="pageregras">
+        <div id="rules">
+            <p><b>Regras</b></p>
+            <ol style="list-style: circle;">
+                <li>2 jogadores (X e O)</li>
+                <br>
+                <li>Jogatina alternada entre ambos </li>
+                <br>
+                <li>Obrigatório responder a pergunta 😊</li>
+                <br>
+                <li>Tempo máximo de 1 minuto para responder</li>
+            </ol>
+            <p><b>Perguntas</b></p>
+            <ol style="list-style: circle;">
+                <li>Todas as perguntas tem base em derivadas estudadas</li>
+                <br>
+                <li>Pergunta certa = escolhe a casa </li>
+                <br>
+                <li>Resposta errada = passa a vez para o oponente</li>
+        </ol>
+        <p><b>Objetivo</b></p>
+            <ol style="list-style: circle;">
+                <li>Formar uma linha com os três símbolos iguais (horizontal, vertical ou diagonal)</li>
+                <br>
+                <li>Vencer o jogo 😊</li>
+        </ol>
         </div>
-        
-        <div class="new-game">
-            <button>NOVO JOGO</button>
-        </div>
 
-        <div class="question">
-            <p id="textQuestion"></p>
-            <div id="abc456">
-                <form id="radiosInputs">
-                    <input type="radio" id="radioA" name="radio" value="A">
-                    <label for="radioA" id="radioContentA"></label> <br>
-
-                    <input type="radio" id="radioB" name="radio" value="B">
-                    <label for="radioB" id="radioContentB"></label> <br>
-
-                    <input type="radio" id="radioC" name="radio" value="C">
-                    <label for="radioC" id="radioContentC"></label> <br>
-
-                    <input type="radio" id="radioD" name="radio" value="D">
-                    <label for="radioD" id="radioContentD"></label> <br>
-                    <br>
-                    
-                    <button type="submit" onclick="TicTacToe.Question()" id="abc123">Confirma</button>
-                </form>
-            </div>
-        </div>
     </div>
+    
 </body>
-
 </html>
