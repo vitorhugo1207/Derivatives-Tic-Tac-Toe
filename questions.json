@@ -132,7 +132,7 @@
     },
 
     "thirteen":{
-        "question":"Defina a derivada da função: f(x)=2x⁴ − 10x2 + 13x:",
+        "question":"Defina a derivada da função: f(x)=2x⁴ − 10x² + 13x:",
         "alternatives":{
             "A":"4x² − 20x + 13",
             "B":"8x³ − 20x + 13",
