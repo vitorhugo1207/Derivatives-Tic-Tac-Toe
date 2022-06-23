@@ -1,6 +1,7 @@
 // Global variables
 var result;
 var randKey;
+var cont = 0;
 
 // Main
 var TicTacToe = {
@@ -33,7 +34,7 @@ var TicTacToe = {
     },
 
     setTurnIndicator: function () {
-        this.turnIndicator.innerText = this.symbols[this.currentPlayer] + " joga."
+        this.turnIndicator.innerText = "Vez do " + this.symbols[this.currentPlayer] + ". Pronto?"
         this.turnIndicator.classList.remove("player"+(1-this.currentPlayer));
         this.turnIndicator.classList.add("player"+this.currentPlayer);
     },
@@ -56,11 +57,14 @@ var TicTacToe = {
         if (!this.gameOver && el.innerText.length == 0) {
             // set text
             el.innerText = this.symbols[this.currentPlayer];
-            el.classList.add("player"+this.currentPlayer);
+            el.classList.add("player" + this.currentPlayer);
             // check for win
-            if (this.checkWin()) {
+            
+            if (this.checkWin()) {                
+               
                 var winningText = this.symbols[this.currentPlayer] + " venceu!";
                 this.endGame(winningText);
+                
             }
             // check if draw
             else if (this.draw()) {
@@ -71,6 +75,7 @@ var TicTacToe = {
             else {
                 this.nextTurn();
             }
+           
         }
     },
 
@@ -116,6 +121,8 @@ var TicTacToe = {
                 // Get which radio was chosen (player response)
                 var radioValue;
                 var item;
+                
+
                 for(var item of listradiosInputs){
                     if (item.checked == true){
                         radioValue = item.value;
@@ -157,6 +164,12 @@ var TicTacToe = {
                         // Reset radiosInputs
                         document.getElementById('radiosInputs').reset();
                     });
+
+                    cont++;
+                    console.log('Resposta certa!');
+                    console.log(cont);
+                    document.getElementById("contador").innerHTML = cont;  
+                   
                 }
                 // If player response was wrong
                 else{
@@ -232,6 +245,13 @@ var TicTacToe = {
         this.turnIndicator.classList.add("player"+this.currentPlayer);
         this.board.classList.add("game-over");
         this.newGameButton.classList.add("show");
-    }
+    },
 }
+
+function newStart() {
+    document.getElementById("contador").innerHTML = "0";
+    cont = 0;
+    console.log(cont);
+}
+
 window.onload = TicTacToe.init();

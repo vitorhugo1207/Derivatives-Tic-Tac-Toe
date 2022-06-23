@@ -4,291 +4,257 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <title>Banco de Perguntas</title>
-    <style>
-            body{
-                  background-image: linear-gradient(30deg, rgba(14, 62, 221, 0.774),rgba(103, 19, 158, 0.767));
-            }
-            #texto2{
-                  font-family: Arial, Helvetica, sans-serif;
-                  font-size: 20px;
-                  padding-right: 280px;
-                  text-align: center;
-                  color: white;
-            }
-            #info{
-                  color: white;
-            }
-            #perguntas {
-                  text-indent: 5%;
-                  color: white;
-                  text-align: left ;
-                  font-family: Arial, Helvetica, sans-serif; 
-            }
-            .questionpage{
-                  width: 1600px;
-                  border: none;
-                  margin: none;
-                  box-sizing: content-box ;
-            }
-            #ends{
-                  text-align: center;
-                  padding-right: 280px;
-                  color: white;
-            }
-            button {
-                  border: none;
-                  padding: 11px 18px;
-                  background: #008888;
-                  color: #fff;
-                  border-radius: 4px;
-                  box-shadow: 0 2px 8px #00000010, 0 3px 6px #00000050;
-                  transition: 0.2s ease-out;
-                  cursor: pointer;
-                  font-size: 14px;
-                  font-family: inherit;
-            }
-
-            button:hover {
-                  background: #009999;
-                  box-shadow: 0 10px 20px #00000020, 0 6px 6px #00000050;
-            }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/questions.css">
+    <link rel="icon" href="styles/JogoVelha.png">
+    <title>Jogo da Velha | Banco de Perguntas</title>
 </head>
 <body>
       <div class="questionpage">
-      <div id="texto2">
-            <h1>PERGUNTAS SOBRE DERIVADAS E INTEGRAIS - JOGO DA VELHA </h1>
-                 <p></p> 
-            
-            <div id="info">
-                  <p>Nessa página, você poderá conferir todas as perguntas que usamos para a elaboração do nosso jogo.</p>
-                  <p>Sinta-se livre para estuda-lás quando desejar!</p>
+            <div class="info">
+                  <h1>PERGUNTAS SOBRE DERIVADAS E INTEGRAIS - JOGO DA VELHA </h1>          
+                  <div>
+                        <p>Nessa página, você poderá conferir todas as perguntas que usamos para a elaboração do nosso jogo.</p>
+                        <p>Sinta-se livre para estuda-lás quando desejar!</p>
+                  </div>
 
+                  <section class="btn-section">
+                        <a href="index.html">
+                              <button>Regras</button>
+                        </a>
+<br>
+                        <a href="game.html">
+                              <button>Jogar</button>
+                        </a>
+                  </section>           
+                  <br>                
             </div>
-            <a href="index.html">
-                  <button>Regras</button>
-            </a>
-            <a href="game.html">
-                  <button>Game</button>
-            </a>
+
+            <div class="questions">
+                  <div class="btn-group">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[1] É a regra do(a) __________  que nos diz como calcular 
+                              a derivada de expressões da forma x<sup>n</sup> <br>(em outras palavras, expressões com x elevado à qualquer potência):</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) Regra da potência</li>
+                          <li class="dropdown-item">B) Regra da multiplicação por constante</li>
+                          <li class="dropdown-item">C) Regra do produto</li>
+                          <li class="dropdown-item question-right">D) Regra do Cociente</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[2] Dada a função f(x) = 2. Qual a derivada dessa função?</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) f’(x) = 2x²</li>
+                          <li class="dropdown-item">B) f’(x) = x²</li>
+                          <li class="dropdown-item question-right">C) f’(x) = 0</li>
+                          <li class="dropdown-item">D) f’(x) = 4x</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[3] A derivada de uma parábola é:</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) Uma reta paralela ao eixo x</li>
+                          <li class="dropdown-item">B) Uma reta crescente</li>
+                          <li class="dropdown-item">C) Uma reta decrescente</li>
+                          <li class="dropdown-item question-right">D) Uma reta</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[4] A taxa de variação de uma curva quando seu intervalo tende a zero, é conhecida como:</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) Soma de quadrados</li>
+                          <li class="dropdown-item">B) Regra do cociente</li>
+                          <li class="dropdown-item question-right">C) Derivada</li>
+                          <li class="dropdown-item">D) Limite</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[5] Qual a derivada de f(x) = 3x⁵ – 2x³ + 5 – 3x?</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) 3x⁴ - 2x² - 2</li>
+                          <li class="dropdown-item">B) x² – 3</li>
+                          <li class="dropdown-item question-right">C) 15x⁴ – 6x² - 3</li>
+                          <li class="dropdown-item">D) -2x³ + 5</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[6] Ao derivarmos f(x) = x² no ponto 2:</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) f’(x) = 2</li>
+                          <li class="dropdown-item">B) f’(2) = 2 * 2</li>
+                          <li class="dropdown-item question-right">C) f’(2) = 2 * 2</li>
+                          <li class="dropdown-item">D) --</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[7] Qual a deriva de f(x) = x³ + 1000?</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item question-right">A) f’(x) = 3x²</li>
+                          <li class="dropdown-item">B) f’(x) = 3x² - 1000</li>
+                          <li class="dropdown-item">C) f’(x) = x²</li>
+                          <li class="dropdown-item">D) f’(x) = 3x³</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[8] Com base na função f(x) = x³ + x² + x + 1. Ao calcularmos sua derivada temos:</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) f’(x) = 3 + 2x + 1</li>
+                          <li class="dropdown-item">B) f’(x) = 3x² + 2x + 1x²</li>
+                          <li class="dropdown-item question-right">C) f’(x) = 3x² + 2x + 1</li>
+                          <li class="dropdown-item">D) f’(x) = x³ + 2x + 2</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[9] Das regras abaixo qual NÃO pertence a regra da derivada?</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) Regra da Potência</li>
+                          <li class="dropdown-item">B) Regra da multiplicação por constante</li>
+                          <li class="dropdown-item">C) Regra da Soma</li>
+                          <li class="dropdown-item question-right">D) Regra do Polinomio</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[10] Qual o valor de y = x⁵?</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) y⁴</li>
+                          <li class="dropdown-item">B) xy⁵⁻¹</li>
+                          <li class="dropdown-item question-right">C) x⁴</li>
+                          <li class="dropdown-item">D) x⁵⁻¹</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[11] O conceito de _________ estuda a variação das funções, como uma dada função <br> varia na medida em que variamos o seu valor de x.</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item question-right">A) Derivada</li>
+                          <li class="dropdown-item">B) Integral</li>
+                          <li class="dropdown-item">C) Limite</li>
+                          <li class="dropdown-item">D) Correlação</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[12] Ao calcularmos a derivada de f(x) = 6x³ − 9x + 4. Obtemos:</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item question-right">A) f′(x) = 18x² − 9</li>
+                          <li class="dropdown-item">B) f′(x)=18x² − 3x + 2</li>
+                          <li class="dropdown-item">C) f′(x)=3x² − 9</li>
+                          <li class="dropdown-item">D) f′(x)=18x² − 3</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[13] Defina a derivada da função: f(x)=2x⁴ − 10x<sup>2</sup> + 13x:</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) 4x² − 20x + 13</li>
+                          <li class="dropdown-item question-right">B) 8x³ − 20x + 13</li>
+                          <li class="dropdown-item">C) 8x³ − 100x</li>
+                          <li class="dropdown-item">D) 8x³ − 20x + 3x</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[14] Qual a derivada da função f(x) = x²</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item question-right">A) f'(x) = 2x</li>
+                          <li class="dropdown-item">B) f'(x) = 4x</li>
+                          <li class="dropdown-item">C) f'(x) = 2x<sup>2</sup></li>
+                          <li class="dropdown-item">D) f'(x) = x<sup>4</sup></li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[15] Dada a função f(x) = 20, podemos dizer que sua derivada é:</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) É igual a 0</li>
+                          <li class="dropdown-item">B) Uma constante</li>
+                          <li class="dropdown-item">C) f'(x) = 20x</li>
+                          <li class="dropdown-item question-right">D) Alternativas A e B</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[16] Com base na função f'(x) = 5x³ + 2x, a derivada correspondente a ela é:</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) f'(x) = 5x² + 2</li>
+                          <li class="dropdown-item question-right">B) f'(x) = 15x² + 2</li>
+                          <li class="dropdown-item">C) f'(x) = 3x5 - 2x</li>
+                          <li class="dropdown-item">D) f'(x) = 15x² + 2x</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[17] A derivada de uma função é um(a) __________.</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) Soma</li>
+                          <li class="dropdown-item">B) Fração</li>
+                          <li class="dropdown-item question-right">C) Função</li>
+                          <li class="dropdown-item">D) Quociente</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[18] Qual destes filósofos/matemáticos descobriu a Regra do Produto?</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item question-right">A) Gottfried Wilhelm Leibniz</li>
+                          <li class="dropdown-item">B) Isaac Newton</li>
+                          <li class="dropdown-item">C) Augustin Louis Cauchy</li>
+                          <li class="dropdown-item">D) Karl Weierstrass</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group mt-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[19] As derivadas quando existem determinam:</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) A oscilação de valores a um limite</li>
+                          <li class="dropdown-item">B) O comprimento dos pontos (A, B) em uma reta</li>
+                          <li class="dropdown-item question-right">C) A inclinação da reta tangente a uma função f(x)</li>
+                          <li class="dropdown-item">D) A soma dos componentes dentro da função</li>
+                        </ul>
+                  </div>
+                  <div class="btn-group my-5">
+                        <button type="button" class="question btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                              <b>[20] Qual a derivada de e(x)<sup>(b+1)</sup>?</b>                          
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item">A) x <sup>(b-1)</sup></li>
+                          <li class="dropdown-item">B) (b-1)x</li>
+                          <li class="dropdown-item">C) x<sup>(1-b)</sup></li>
+                          <li class="dropdown-item question-right">D) (b+1)x<sup>b</sup></li>
+                        </ul>
+                  </div>
+            </div>      
       </div>
-      <br>
-
-      <div id="perguntas">
-            <p><b>[1] É a regra do(a) __________  que nos diz como calcular a derivada de expressões da forma x<sup>n</sup> (em outras palavras, expressões com x elevado à qualquer potência):</b>
-                  
-                  <p>A) Regra da potência</p> 
-                  <p>B) Regra da multiplicação por constante</p> 
-                  <p>C) Regra do produto</p>     
-                  <p style="color: #0fd409;"><b>D) Regra do Cociente</b></p> 
-                  <b><p>Resposta correta: letra C</p></b>  
-
-            <br> 
-
-            <p><b>[2] Dada a função f(x) = 2. Qual a derivada dessa função?</b>
-            
-                  <p>A) f’(x) = 2x²</p> 
-                  <p>B) f’(x) = x²</p>
-                  <p style="color: #0fd409;"><b>C) f’(x) = 0</b></p> 
-                  <p>D) f’(x) = 4x</p> 
-                  <p><b>Resposta correta: letra C </p></b>
-            </p>
-
-            <br>
-
-            <p><b>[3] A derivada de uma parábola é:</b>
-                  <p>A) Uma reta paralela ao eixo x</p> 
-                  <p>B) Uma reta crescente</p> 
-                  <p>C) Uma reta decrescente</p>  
-                  <p style="color: #0fd409;"><b>D) Uma reta</b></p>   
-                  <p><b>Resposta correta: letra D </b></p>
-            </p>
-
-            <br>
-
-            <p><b>[4] A taxa de variação de uma curva quando seu intervalo tende a zero, é conhecida como:</b>
-                  <p>A) Soma de quadrados</p> 
-                  <p>B) Regra do cociente</p> 
-                  <p style="color: #0fd409;"><b>C) Derivada</b></p>  
-                  <p>D) Limite</p>   
-                  <p><b>Resposta correta: letra C </b></p>
-            </p>
-
-            <br>
-
-            <p><b>[5] Qual a derivada de f(x) = 3x⁵ – 2x³ + 5 – 3x?</b>
-                  <p>A) 3x⁴ - 2x² - 2</p> 
-                  <p>B) x² – 3</p> 
-                  <p style="color: #0fd409;"><b>C) 15x⁴ – 6x² - 3</b></p>  
-                  <p>D) -2x³ + 5</p>   
-                  <p><b>Resposta correta: letra C </b></p>
-            </p>
-
-            <br>
-
-            <p><b>[6] Ao derivarmos f(x) = x² no ponto 2:</b>
-                  <p>A) f’(x) = 2</p> 
-                  <p>B) f’(2) = 2 * 2</p> 
-                  <p style="color: #0fd409;"><b>C) f’(2) = 4</b></p>  
-                  <p>D) --</p>   
-                  <p><b>Resposta correta: letra C </b></p>
-            </p>
-
-            <br>
-
-            <p><b>[7] Qual a deriva de f(x) = x³ + 1000?</b>
-                  <p style="color: #0fd409;"><b>A) f’(x) = 3x²</b></p> 
-                  <p>B) f’(x) = 3x² - 1000</p> 
-                  <p>C) f’(x) = x²</p>  
-                  <p>D) f’(x) = 3x³</p>   
-                  <p><b>Resposta correta: letra A </b></p>
-            </p>
-
-            <br>
-
-            <p><b>[8] Com base na função f(x) = x³ + x² + x + 1. Ao calcularmos sua derivada temos:</b>
-                  <p>A) f’(x) = 3 + 2x + 1</p> 
-                  <p>B) f’(x) = 3x² + 2x + 1x²</p> 
-                  <p style="color: #0fd409;"><b>C) f’(x) = 3x² + 2x + 1</b></p>  
-                  <p>D) f’(x) = x³ + 2x + 2</p>   
-                  <p><b>Resposta correta: letra C</b></p>
-            </p>
-
-            <br>
-
-            <p><b>[9] Das regras abaixo qual NÃO pertence a regra da derivada?</b>
-                  <p>A) Regra da Potência</p> 
-                  <p>B) Regra da multiplicação por constante</p> 
-                  <p>C) Regra da Soma</p>  
-                  <p style="color: #0fd409;"><b>D) Regra do Polinomio</b></p>   
-                  <p><b>Resposta correta: letra D </b></p>
-            </p>
-
-            <br>
-
-            <p><b>[10] Qual o valor de y = x⁵?</b>
-                  <p>A) y⁴</p> 
-                  <p>B) xy⁵⁻¹</p> 
-                  <p style="color: #0fd409;"><b>C) x⁴</b></p>  
-                  <p>D) x⁵⁻¹</p>   
-                  <p><b>Resposta correta: letra C </b></p>
-            </p>
-
-            <br>
- 
-            <p><b>[11] O conceito de _________ estuda a variação das funções, como uma dada função varia na medida em que variamos o seu valor de x. 
-                 <p> Com isso podemos saber se a função cresce e qual a taxa de crescimento dela. Um uso muito comum serve para identificar pontos máximos e mínimos de uma função.</b></p>
-                       <p style="color: #0fd409;"><b>A) Derivada</b></p> 
-                  <p>B) Integral</p> 
-                  <p>C) Limite</p>  
-                  <p>D) Correlação</p>   
-                  <p><b>Resposta correta: letra A</b></p>
-            </p>
-            
-
-            <br>
-
-            <p><b>[12] Ao calcularmos a derivada de f(x) = 6x³ − 9x + 4. Obtemos:</b>
-                  <p style="color: #0fd409;"><b>A) f′(x) = 18x² − 9</b></p> 
-                  <p>B) f′(x)=18x² − 3x + 2</p> 
-                  <p>C) f′(x)=3x² − 9</p>  
-                  <p>D) f′(x)=18x² − 3</p>   
-                  <p><b>Resposta correta: letra A</b></p>
-            </p>
-
-            <br>
-
-            <p><b>[13] Defina a derivada da função: f(x)=2x⁴ − 10x<sup>2</sup> + 13x:</b>
-                  <p>A) 4x² − 20x + 13</p> 
-                  <p style="color: #0fd409;"><b>B) 8x³ − 20x + 13</b></p> 
-                  <p>C) 8x³ − 100x</p>  
-                  <p>D) 8x³ − 20x + 3x</p>   
-                  <p><b>Resposta correta: letra B</b></p>
-            </p>
-
-            <br>
-            
-            <p><b>[14] Qual a derivada da função f(x) = x²</b>
-                  <p style="color: #0fd409;"><b>A) f'(x) = 2x</b></p> 
-                  <p>B) f'(x) = 4x</p> 
-                  <p>C) f'(x) = 2x<sup>2</sup></p>  
-                  <p>D) f'(x) = x<sup>4</sup></p>   
-                  <p><b>Resposta correta: letra A</b></p>
-            </p>
-
-            <br>
-            
-            <p><b>[15] Dada a função f(x) = 20, podemos dizer que sua derivada é:</b>
-                  <p>A) É igual a 0</p> 
-                  <p>B) Uma constante</p> 
-                  <p>C) f'(x) = 20x</p>  
-                  <p style="color: #0fd409;"> <b>D) Alternativas A e B</b></p>   
-                  <p><b>Resposta correta: letra D</b></p>
-            </p>
-
-            <br>
-
-            <p><b>[16] Com base na função f'(x) = 5x³ + 2x, a derivada correspondente a ela é:</b>
-                  <p>A) f'(x) = 5x² + 2 </p> 
-                  <p style="color: #0fd409;"><b>B) f'(x) = 15x² + 2</b></p> 
-                  <p>C) f'(x) = 3x5 - 2x</p>  
-                  <p>D) f'(x) = 15x² + 2x</p>   
-                  <p><b>Resposta correta: letra B</b></p>
-            </p>
-
-            <br>
-
-            <p><b>[17] A derivada de uma função é um(a) __________.</b>
-                  <p>A) Soma </p> 
-                  <p>B) Fração</p> 
-                  <p style="color: #0fd409;"><b>C) Função</b></p>  
-                  <p>D) Quociente </p>   
-                  <p><b>Resposta correta: letra C </b></p>
-            </p>
-
-            <br>
-
-            <p><b>[18] Qual destes filósofos/matemáticos descobriu a Regra do Produto?</b>
-                  <p style="color: #0fd409;"><b>A) Gottfried Wilhelm Leibniz</b></p> 
-                  <p>B) Isaac Newton</p> 
-                  <p>C) Augustin Louis Cauchy</p>  
-                  <p>D) Karl Weierstrass</p>   
-                  <p><b>Resposta correta: letra A</b></p>
-            </p>
-
-            <br>
-
-            <p><b>[19] As derivadas quando existem determinam:</b>
-                  <p>A) A oscilação de valores a um limite </p> 
-                  <p>B) O comprimento dos pontos (A, B) em uma reta </p> 
-                  <p style="color: #0fd409;"><b>C) A inclinação da reta tangente a uma função f(x)</b></p>  
-                  <p>D) A soma dos componentes dentro da função </p>   
-                  <p><b>Resposta correta: letra C </b></p>
-            </p>
-
-            <br>
-
-            <p><b>[20] Qual a derivada de e(x)<sup>(b+1)</sup>?</b>
-                  <p>A) x <sup>(b-1)</sup></p> 
-                  <p>B) (b-1)x</p> 
-                  <p>C) x<sup>(1-b)</sup></p>  
-                  <p style="color: #0fd409;"> <b>D) (b+1)x<sup>b</sup> </b></p>   
-                  <p><b>Resposta correta: letra D</b></p>
-            </p>
-
-            <br>
-            <br>
-
-            <div id="ends">
-            <p> <b> Made for academic purposes - Fatec Prof. Antônio Seabra</b></p>
- 
-            </div>
-      </div>
-      </div>
-
 </body>
 </html>
