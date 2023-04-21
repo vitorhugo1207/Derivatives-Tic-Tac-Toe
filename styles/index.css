@@ -1,99 +1,89 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --chatgpt-primary-color: #3e71ae;
+  --chatgpt-secondary-color: #f2a900;
+  --chatgpt-tertiary-color: #4c4c4c;
+  --chatgpt-gray-color: #e1e1e1;
 }
 
-body{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    text-align: left;
-    animation: animate 9.5s ease infinite;
-}
-
-ol {
-    padding-left: 30px;
-    color: #a5bdc9;
-}
-
-hr.break-line {
-    border-top: 1px solid #a5bdc9;
-    margin: 15px 0;
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .pageregras {
-    width: 40%;
-    height: 80%;
-    display: block;
-    margin: 0 auto;
-    color: #e9e5e5;
-    background-color: #384195;
-    padding: 30px;
-    margin-top: 20px;
-    border-radius: 5px;
-    font-size: clamp(.4rem, .8rem, 1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
 }
 
 .rules {
-    margin-top: 20px;
+  max-width: 700px;
+  margin-bottom: 20px;
 }
 
-.btn-default {
-    padding: 8px 17px;
-    background-color: transparent;
-    display: block;
-    margin: 20px auto;
-    border-radius: 5px;
-    border-color: #1afff4;
-    color: white;
-    cursor: pointer;
-    transition: .3s ease;   
+.rule-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-button:hover {
-    background-color: #8e8ef1;    
-    border-color: #102894;
-    color: white;
-    transition: .3s ease; 
-    opacity: 60%;  
+.rule-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.ancor-default {
-    text-decoration: none;
+.rule-list li {
+  margin-bottom: 10px;
 }
 
-p {
-    margin: 10px 0;
+.required-answer {
+  font-weight: 700;
 }
 
-@keyframes animate {
-    0% {
-        background-color: #6660bd;
-    }
-    25% {
-        background-color: #58585e;
-    }
-    50% {
-        background-color: #967eb6;
-    }
-    75% {
-        background-color: #5b217c;
-    }
-    85% {
-        background-color: #4f6777;
-    }
-    100% {
-        background-color: #4b5474;
-    }
+.rule-line {
+  border: none;
+  border-top: 1px solid var(--chatgpt-gray-color);
+  margin: 30px 0;
 }
 
-@media screen and (max-width: 480px){
-    .pageregras {
-        width: 80%;
-        height: 80%;
-        display: block;
-        margin: 30px auto;
-    }
+.btn-primary {
+  background-color: var(--chatgpt-tertiary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--chatgpt-secondary-color);
+}
+
+.btn-link {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .pageregras {
+    padding: 20px;
+  }
+  .rules {
+    max-width: 90%;
+  }
+  .rule-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .btn-primary {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
