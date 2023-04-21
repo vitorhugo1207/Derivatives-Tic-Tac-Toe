@@ -1,91 +1,104 @@
+:root {
+  --chatgpt-primary-color: #3e71ae;
+  --chatgpt-secondary-color: #f2a900;
+  --chatgpt-tertiary-color: #4c4c4c;
+  --chatgpt-gray-color: #e1e1e1;
+}
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    background-color: #138080;
-}
-
-.questionpage{
-    width: 100%;
-    height: 100vh;
-    color: aliceblue;
-    padding: 20px;
+.questionpage {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
 }
 
 .dropdown-menu {
-        left: 50% !important;
-        right: auto !important;
-        text-align: center !important;
-        transform: translate(-50%, 0) !important;
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
 }
 
-.info{
-    text-align: center;
-    font-size: clamp(0.7rem, 1rem, 1.3rem) !important;
+.info {
+  text-align: center;
+  font-size: clamp(0.7rem, 1rem, 1.3rem) !important;
 }
 
 .btn-section {
-    margin: 20px auto;
-    display: block;
-    gap: 5%;
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  margin: 20px auto;
+  display: block;
+  gap: 5%;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 button {
-    border: none;
-    padding: 6px 10px;
-    background: #0b4141;
-    color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px #00000010, 0 3px 6px #00000050;
-    transition: 0.2s ease-out;
-    cursor: pointer;
-    font-size: 1rem !important;
+  border: none;
+  padding: 6px 10px;
+  background: var(--chatgpt-tertiary-color);
+  color: var(--chatgpt-gray-color);
+  transition: 0.2s ease-out;
+  cursor: pointer;
 }
 
 button:hover {
-    background: #009999;
-    box-shadow: 0 10px 20px #00000020, 0 6px 6px #00000050;
+  background: var(--chatgpt-secondary-color);
+  box-shadow: 0 10px 20px #00000020, 0 6px 6px #00000050;
 }
 
 .question-right {
-    color: #352385;
-    font-weight: 600;
+  color: var(--chatgpt-secondary-color);
+  font-weight: 600;
 }
 
-.questions, b {
-    width: 90% !important;
-    display: block !important;
-    margin: 0 auto !important;
-    font-size: 15px !important;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.questions,
+p {
+  width: 90% !important;
+  display: block !important;
+  margin: 0 auto !important;
+  font-size: 15px !important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .btn-group {
-    width: 90% !important; 
+  width: 90% !important;
 }
 
 .question {
-    width: 100% !important;
-    height: 10% !important;
+  width: 100% !important;
+  height: 10% !important;
 }
-@media screen and (max-width: 480px){
-    .questions, b {
-        width: 80% !important;
-        display: block !important;
-        margin: 0 auto !important;
-        font-size: 5px !important;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-    }
+@media screen and (max-width: 480px) {
+  .questions,
+  p {
+    display: block !important;
+    margin: 0 auto !important;
+    font-size: 12px !important;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.dropdown-menu li {
+  text-align: left;
+}
+
+.question p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 0;
+  text-align: initial;
 }
